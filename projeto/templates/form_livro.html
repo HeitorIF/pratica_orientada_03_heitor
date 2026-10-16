@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Cadastro de livros{% endblock %}
+
+{% block content %}
+    <h1>Novo livro</h1>
+    <form method="post">
+    <label>Título <input name="titulo" required></label>
+    <label>Usuário
+        <select name="usuario_id" required>
+            {% for usuario in usuarios %}
+            <option value="{{ usuario.id }}">{{ usuario.nome }}</option>
+            {% endfor %}
+        </select>
+    </label>
+    <button type="submit">Salvar</button>
+</form>
+{% endblock %}
